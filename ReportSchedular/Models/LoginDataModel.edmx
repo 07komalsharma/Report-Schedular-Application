@@ -1,0 +1,269 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="LoginDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'LoginDatabase.dbo.ABT_tb' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ABT_tb">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Names" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Names" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'LoginDatabase.dbo.DSM_tb' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="DSM_tb">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="dsm_charges" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="dsm_charges" Type="float" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'LoginDatabase.dbo.RepMaster' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="RepMaster">
+          <Key>
+            <PropertyRef Name="Report_ID" />
+            <PropertyRef Name="Report_Name" />
+          </Key>
+          <Property Name="Report_ID" Type="int" Nullable="false" />
+          <Property Name="Report_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Filter" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'LoginDatabase.dbo.ReportList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ReportList">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Report_ID" />
+            <PropertyRef Name="SchedularID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Report_ID" Type="int" Nullable="false" />
+          <Property Name="SchedularID" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'LoginDatabase.dbo.Schedular' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Schedular">
+          <Key>
+            <PropertyRef Name="SchedularID" />
+            <PropertyRef Name="SchedularName" />
+            <PropertyRef Name="Email" />
+          </Key>
+          <Property Name="SchedularID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SchedularName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Frequency" Type="nvarchar" MaxLength="50" />
+          <Property Name="Weekdays" Type="int" />
+          <Property Name="MonthlyDate" Type="int" />
+          <Property Name="SchedularTime" Type="time" Precision="7" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityContainer Name="LoginDatabaseModelStoreContainer">
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ABT_tb" EntityType="Self.ABT_tb" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ABT_tb].[ID] AS [ID], 
+    [ABT_tb].[Names] AS [Names]
+    FROM [dbo].[ABT_tb] AS [ABT_tb]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="DSM_tb" EntityType="Self.DSM_tb" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [DSM_tb].[ID] AS [ID], 
+    [DSM_tb].[dsm_charges] AS [dsm_charges]
+    FROM [dbo].[DSM_tb] AS [DSM_tb]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="RepMaster" EntityType="Self.RepMaster" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [RepMaster].[Report_ID] AS [Report_ID], 
+    [RepMaster].[Report_Name] AS [Report_Name], 
+    [RepMaster].[Filter] AS [Filter]
+    FROM [dbo].[RepMaster] AS [RepMaster]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ReportList" EntityType="Self.ReportList" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ReportList].[ID] AS [ID], 
+    [ReportList].[Report_ID] AS [Report_ID], 
+    [ReportList].[SchedularID] AS [SchedularID]
+    FROM [dbo].[ReportList] AS [ReportList]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Schedular" EntityType="Self.Schedular" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Schedular].[SchedularID] AS [SchedularID], 
+    [Schedular].[SchedularName] AS [SchedularName], 
+    [Schedular].[Email] AS [Email], 
+    [Schedular].[Frequency] AS [Frequency], 
+    [Schedular].[Weekdays] AS [Weekdays], 
+    [Schedular].[MonthlyDate] AS [MonthlyDate], 
+    [Schedular].[SchedularTime] AS [SchedularTime]
+    FROM [dbo].[Schedular] AS [Schedular]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LoginDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="LoginDatabaseEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="RepMasters" EntityType="LoginDatabaseModel.RepMaster" />
+          <EntitySet Name="ReportLists" EntityType="LoginDatabaseModel.ReportList" />
+          <EntitySet Name="DSM_tb" EntityType="LoginDatabaseModel.DSM_tb" />
+          <EntitySet Name="ABT_tb" EntityType="LoginDatabaseModel.ABT_tb" />
+          <EntitySet Name="Schedulars" EntityType="LoginDatabaseModel.Schedular" />
+        </EntityContainer>
+        <EntityType Name="RepMaster">
+          <Key>
+            <PropertyRef Name="Report_ID" />
+            <PropertyRef Name="Report_Name" />
+          </Key>
+          <Property Name="Report_ID" Type="Int32" Nullable="false" />
+          <Property Name="Report_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Filter" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ReportList">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="SchedularID" />
+            <PropertyRef Name="Report_ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="SchedularID" Type="Int32" Nullable="false" />
+          <Property Name="Report_ID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DSM_tb">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="dsm_charges" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="dsm_charges" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ABT_tb">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Names" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Names" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Schedular">
+          <Key>
+            <PropertyRef Name="SchedularID" />
+            <PropertyRef Name="SchedularName" />
+            <PropertyRef Name="Email" />
+          </Key>
+          <Property Name="SchedularID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SchedularName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Frequency" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Weekdays" Type="Int32" />
+          <Property Name="MonthlyDate" Type="Int32" />
+          <Property Name="SchedularTime" Type="Time" Precision="7" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LoginDatabaseModelStoreContainer" CdmEntityContainer="LoginDatabaseEntities">
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="LoginDatabaseModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RepMasters">
+            <EntityTypeMapping TypeName="LoginDatabaseModel.RepMaster">
+              <MappingFragment StoreEntitySet="RepMaster">
+                <ScalarProperty Name="Filter" ColumnName="Filter" />
+                <ScalarProperty Name="Report_Name" ColumnName="Report_Name" />
+                <ScalarProperty Name="Report_ID" ColumnName="Report_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReportLists">
+            <EntityTypeMapping TypeName="LoginDatabaseModel.ReportList">
+              <MappingFragment StoreEntitySet="ReportList">
+                <ScalarProperty Name="Report_ID" ColumnName="Report_ID" />
+                <ScalarProperty Name="SchedularID" ColumnName="SchedularID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DSM_tb">
+            <EntityTypeMapping TypeName="LoginDatabaseModel.DSM_tb">
+              <MappingFragment StoreEntitySet="DSM_tb">
+                <ScalarProperty Name="dsm_charges" ColumnName="dsm_charges" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ABT_tb">
+            <EntityTypeMapping TypeName="LoginDatabaseModel.ABT_tb">
+              <MappingFragment StoreEntitySet="ABT_tb">
+                <ScalarProperty Name="Names" ColumnName="Names" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Schedulars">
+            <EntityTypeMapping TypeName="LoginDatabaseModel.Schedular">
+              <MappingFragment StoreEntitySet="Schedular">
+                <ScalarProperty Name="SchedularTime" ColumnName="SchedularTime" />
+                <ScalarProperty Name="MonthlyDate" ColumnName="MonthlyDate" />
+                <ScalarProperty Name="Weekdays" ColumnName="Weekdays" />
+                <ScalarProperty Name="Frequency" ColumnName="Frequency" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="SchedularName" ColumnName="SchedularName" />
+                <ScalarProperty Name="SchedularID" ColumnName="SchedularID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
