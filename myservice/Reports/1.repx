@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XtraReportsLayoutSerializer SerializerVersion="19.2.4.0" Ref="1" ControlType="DevExpress.XtraReports.UI.XtraReport, DevExpress.XtraReports.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Name="Report2" Margins="100, 100, 123, 100" PageWidth="850" PageHeight="1100" Version="19.2" DataMember="DSM_tb" DataSource="#Ref-0" Font="Arial, 9.75pt">
+  <Bands>
+    <Item1 Ref="2" ControlType="TopMarginBand" Name="TopMargin" HeightF="123.125015">
+      <Controls>
+        <Item1 Ref="3" ControlType="XRLabel" Name="label3" Multiline="true" Text="DSM   REPORT" TextAlignment="MiddleCenter" SizeF="294.791656,23.0000038" LocationFloat="100, 21.8333244" Font="Arial, 11.75pt, style=Bold" Padding="2,2,0,0,96">
+          <StylePriority Ref="4" UseFont="false" UseTextAlignment="false" />
+        </Item1>
+        <Item2 Ref="5" ControlType="XRLabel" Name="label1" Multiline="true" Text="IDs" TextAlignment="TopCenter" SizeF="144.791672,23" LocationFloat="100, 77.0000153" Font="Arial, 9.75pt, style=Bold" Padding="2,2,0,0,100" BorderColor="RosyBrown" Borders="None" BorderWidth="2">
+          <StylePriority Ref="6" UseFont="false" UseBorderColor="false" UseBorders="false" UseBorderWidth="false" UseTextAlignment="false" />
+        </Item2>
+        <Item3 Ref="7" ControlType="XRLabel" Name="label2" Multiline="true" Text="DSM_Charges" TextAlignment="TopCenter" SizeF="150.000031,23" LocationFloat="244.791611, 77.0000153" Font="Arial, 9.75pt, style=Bold" Padding="2,2,0,0,100" BorderColor="RosyBrown" Borders="None" BorderWidth="2">
+          <StylePriority Ref="8" UseFont="false" UseBorderColor="false" UseBorders="false" UseBorderWidth="false" UseTextAlignment="false" />
+        </Item3>
+      </Controls>
+    </Item1>
+    <Item2 Ref="9" ControlType="DetailBand" Name="Detail" TextAlignment="TopJustify" BorderWidth="1">
+      <Controls>
+        <Item1 Ref="10" ControlType="XRTable" Name="table1" SizeF="294.791656,25" LocationFloat="100, 26.6666737" Padding="2,2,0,0,96">
+          <Rows>
+            <Item1 Ref="11" ControlType="XRTableRow" Name="tableRow1" Weight="1">
+              <Cells>
+                <Item1 Ref="12" ControlType="XRTableCell" Name="tableCell1" Weight="2.1464092341869887" Multiline="true" Text="tableCell1" TextAlignment="TopCenter" Borders="None">
+                  <ExpressionBindings>
+                    <Item1 Ref="13" EventName="BeforePrint" PropertyName="Text" Expression="[ID]" />
+                  </ExpressionBindings>
+                  <StylePriority Ref="14" UseBorders="false" UseTextAlignment="false" />
+                </Item1>
+                <Item2 Ref="15" ControlType="XRTableCell" Name="tableCell2" Weight="2.2236179042326762" Multiline="true" Text="tableCell2" TextAlignment="TopCenter" ForeColor="Black" BackColor="Transparent" Borders="None">
+                  <ExpressionBindings>
+                    <Item1 Ref="16" EventName="BeforePrint" PropertyName="Text" Expression="[dsm_charges]" />
+                  </ExpressionBindings>
+                  <StylePriority Ref="17" UseForeColor="false" UseBackColor="false" UseBorders="false" UseTextAlignment="false" />
+                </Item2>
+              </Cells>
+            </Item1>
+          </Rows>
+        </Item1>
+      </Controls>
+      <StylePriority Ref="18" UseBorderWidth="false" UseTextAlignment="false" />
+    </Item2>
+    <Item3 Ref="19" ControlType="BottomMarginBand" Name="BottomMargin">
+      <Controls>
+        <Item1 Ref="20" ControlType="XRLabel" Name="label4" Multiline="true" Text="            @securemeters ltd." TextAlignment="MiddleCenter" SizeF="320.8333,23" LocationFloat="86.4583359, 10.0000067" Padding="2,2,0,0,96">
+          <StylePriority Ref="21" UseTextAlignment="false" />
+        </Item1>
+      </Controls>
+    </Item3>
+  </Bands>
+  <ComponentStorage>
+    <Item1 Ref="0" ObjectType="DevExpress.DataAccess.Sql.SqlDataSource,DevExpress.DataAccess.v19.2" Name="sqlDataSource1" Base64="PFNxbERhdGFTb3VyY2UgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxDb25uZWN0aW9uIE5hbWU9ImxvY2FsaG9zdF9Mb2dpbkRhdGFiYXNlX0Nvbm5lY3Rpb24iIFByb3ZpZGVyS2V5PSJNU1NxbFNlcnZlciI+PFBhcmFtZXRlcnM+PFBhcmFtZXRlciBOYW1lPSJzZXJ2ZXIiIFZhbHVlPSJsb2NhbGhvc3QiIC8+PFBhcmFtZXRlciBOYW1lPSJkYXRhYmFzZSIgVmFsdWU9IkxvZ2luRGF0YWJhc2UiIC8+PFBhcmFtZXRlciBOYW1lPSJ1c2VJbnRlZ3JhdGVkU2VjdXJpdHkiIFZhbHVlPSJUcnVlIiAvPjxQYXJhbWV0ZXIgTmFtZT0icmVhZCBvbmx5IiBWYWx1ZT0iMSIgLz48UGFyYW1ldGVyIE5hbWU9ImdlbmVyYXRlQ29ubmVjdGlvbkhlbHBlciIgVmFsdWU9ImZhbHNlIiAvPjxQYXJhbWV0ZXIgTmFtZT0idXNlcmlkIiBWYWx1ZT0iIiAvPjxQYXJhbWV0ZXIgTmFtZT0icGFzc3dvcmQiIFZhbHVlPSIiIC8+PC9QYXJhbWV0ZXJzPjwvQ29ubmVjdGlvbj48UXVlcnkgVHlwZT0iU2VsZWN0UXVlcnkiIE5hbWU9IkRTTV90YiI+PFRhYmxlcz48VGFibGUgTmFtZT0iRFNNX3RiIiAvPjwvVGFibGVzPjxDb2x1bW5zPjxDb2x1bW4gVGFibGU9IkRTTV90YiIgTmFtZT0iSUQiIC8+PENvbHVtbiBUYWJsZT0iRFNNX3RiIiBOYW1lPSJkc21fY2hhcmdlcyIgLz48L0NvbHVtbnM+PC9RdWVyeT48UmVzdWx0U2NoZW1hPjxEYXRhU2V0IE5hbWU9InNxbERhdGFTb3VyY2UxIj48VmlldyBOYW1lPSJEU01fdGIiPjxGaWVsZCBOYW1lPSJJRCIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9ImRzbV9jaGFyZ2VzIiBUeXBlPSJEb3VibGUiIC8+PC9WaWV3PjwvRGF0YVNldD48L1Jlc3VsdFNjaGVtYT48Q29ubmVjdGlvbk9wdGlvbnMgQ2xvc2VDb25uZWN0aW9uPSJ0cnVlIiAvPjwvU3FsRGF0YVNvdXJjZT4=" />
+  </ComponentStorage>
+</XtraReportsLayoutSerializer>
