@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XtraReportsLayoutSerializer SerializerVersion="19.2.4.0" Ref="1" ControlType="DevExpress.XtraReports.UI.XtraReport, DevExpress.XtraReports.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Name="Report1" Margins="1, 245, 116, 55" PageWidth="850" PageHeight="1100" Version="19.2" DataMember="Schedular" DataSource="#Ref-0" Font="Arial, 9.75pt">
+  <Bands>
+    <Item1 Ref="2" ControlType="TopMarginBand" Name="TopMargin" HeightF="116">
+      <Controls>
+        <Item1 Ref="3" ControlType="XRLabel" Name="label9" Multiline="true" Text="Schedular Reports" SizeF="231.25,37.5" LocationFloat="16.666666, 11.458333" Padding="2,2,0,0,96" />
+        <Item2 Ref="4" ControlType="XRLabel" Name="label8" Multiline="true" Text="Schedular Name" SizeF="142.708344,23" LocationFloat="300, 77" Padding="2,2,0,0,96" BorderColor="DimGray" Borders="All" BorderWidth="2">
+          <StylePriority Ref="5" UseBorderColor="false" UseBorders="false" UseBorderWidth="false" />
+        </Item2>
+        <Item3 Ref="6" ControlType="XRLabel" Name="label7" Multiline="true" Text="Schedular ID" SizeF="100,23" LocationFloat="200, 77" Padding="2,2,0,0,96" BorderColor="DimGray" Borders="All" BorderWidth="2">
+          <StylePriority Ref="7" UseBorderColor="false" UseBorders="false" UseBorderWidth="false" />
+        </Item3>
+        <Item4 Ref="8" ControlType="XRLabel" Name="label6" Multiline="true" Text="Monthly Date" SizeF="100,23" LocationFloat="100, 77" Padding="2,2,0,0,96" BorderColor="DimGray" Borders="All" BorderWidth="2">
+          <StylePriority Ref="9" UseBorderColor="false" UseBorders="false" UseBorderWidth="false" />
+        </Item4>
+        <Item5 Ref="10" ControlType="XRLabel" Name="label5" Multiline="true" Text="Frequency" SizeF="100,23" LocationFloat="0, 77" ForeColor="Black" Padding="2,2,0,0,96" BorderColor="DimGray" Borders="All" BorderWidth="2" BorderDashStyle="Solid">
+          <StylePriority Ref="11" UseForeColor="false" UseBorderColor="false" UseBorders="false" UseBorderWidth="false" UseBorderDashStyle="false" />
+        </Item5>
+      </Controls>
+    </Item1>
+    <Item2 Ref="12" ControlType="DetailBand" Name="Detail" HeightF="23">
+      <Controls>
+        <Item1 Ref="13" ControlType="XRLabel" Name="label4" Multiline="true" Text="label4" TextAlignment="MiddleCenter" SizeF="142.708344,23" LocationFloat="300, 0" Padding="2,2,0,0,96" BorderColor="DimGray" Borders="All">
+          <ExpressionBindings>
+            <Item1 Ref="14" EventName="BeforePrint" PropertyName="Text" Expression="[SchedularName]" />
+          </ExpressionBindings>
+          <StylePriority Ref="15" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item1>
+        <Item2 Ref="16" ControlType="XRLabel" Name="label3" Multiline="true" Text="label3" TextAlignment="MiddleCenter" SizeF="100,23" LocationFloat="200, 0" Padding="2,2,0,0,96" BorderColor="DimGray" Borders="All">
+          <ExpressionBindings>
+            <Item1 Ref="17" EventName="BeforePrint" PropertyName="Text" Expression="[SchedularID]" />
+          </ExpressionBindings>
+          <StylePriority Ref="18" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item2>
+        <Item3 Ref="19" ControlType="XRLabel" Name="label2" Multiline="true" Text="label2" TextAlignment="MiddleCenter" SizeF="100,23" LocationFloat="100, 0" Padding="2,2,0,0,96" BorderColor="DimGray" Borders="All">
+          <ExpressionBindings>
+            <Item1 Ref="20" EventName="BeforePrint" PropertyName="Text" Expression="[MonthlyDate]" />
+          </ExpressionBindings>
+          <StylePriority Ref="21" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item3>
+        <Item4 Ref="22" ControlType="XRLabel" Name="label1" Multiline="true" Text="label1" TextAlignment="MiddleCenter" SizeF="100,23" LocationFloat="0, 0" Padding="2,2,0,0,96" BorderColor="Gray" Borders="All">
+          <ExpressionBindings>
+            <Item1 Ref="23" EventName="BeforePrint" PropertyName="Text" Expression="[Frequency]" />
+          </ExpressionBindings>
+          <StylePriority Ref="24" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+        </Item4>
+      </Controls>
+    </Item2>
+    <Item3 Ref="25" ControlType="BottomMarginBand" Name="BottomMargin" HeightF="55" />
+  </Bands>
+  <ComponentStorage>
+    <Item1 Ref="0" ObjectType="DevExpress.DataAccess.Sql.SqlDataSource,DevExpress.DataAccess.v19.2" Name="sqlDataSource1" Base64="PFNxbERhdGFTb3VyY2UgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxDb25uZWN0aW9uIE5hbWU9ImxvY2FsaG9zdF9Db25uZWN0aW9uIiBQcm92aWRlcktleT0iTVNTcWxTZXJ2ZXIiPjxQYXJhbWV0ZXJzPjxQYXJhbWV0ZXIgTmFtZT0ic2VydmVyIiBWYWx1ZT0iU01MTDIyMTIwODkiIC8+PFBhcmFtZXRlciBOYW1lPSJkYXRhYmFzZSIgVmFsdWU9IkxvZ2luRGF0YWJhc2UiIC8+PFBhcmFtZXRlciBOYW1lPSJ1c2VJbnRlZ3JhdGVkU2VjdXJpdHkiIFZhbHVlPSJGYWxzZSIgLz48UGFyYW1ldGVyIE5hbWU9InJlYWQgb25seSIgVmFsdWU9IjEiIC8+PFBhcmFtZXRlciBOYW1lPSJnZW5lcmF0ZUNvbm5lY3Rpb25IZWxwZXIiIFZhbHVlPSJmYWxzZSIgLz48L1BhcmFtZXRlcnM+PC9Db25uZWN0aW9uPjxRdWVyeSBUeXBlPSJTZWxlY3RRdWVyeSIgTmFtZT0iU2NoZWR1bGFyIj48VGFibGVzPjxUYWJsZSBOYW1lPSJTY2hlZHVsYXIiIC8+PC9UYWJsZXM+PENvbHVtbnM+PENvbHVtbiBUYWJsZT0iU2NoZWR1bGFyIiBOYW1lPSJTY2hlZHVsYXJJRCIgLz48Q29sdW1uIFRhYmxlPSJTY2hlZHVsYXIiIE5hbWU9IlNjaGVkdWxhck5hbWUiIC8+PENvbHVtbiBUYWJsZT0iU2NoZWR1bGFyIiBOYW1lPSJFbWFpbCIgLz48Q29sdW1uIFRhYmxlPSJTY2hlZHVsYXIiIE5hbWU9IkZyZXF1ZW5jeSIgLz48Q29sdW1uIFRhYmxlPSJTY2hlZHVsYXIiIE5hbWU9IldlZWtkYXlzIiAvPjxDb2x1bW4gVGFibGU9IlNjaGVkdWxhciIgTmFtZT0iTW9udGhseURhdGUiIC8+PENvbHVtbiBUYWJsZT0iU2NoZWR1bGFyIiBOYW1lPSJTY2hlZHVsYXJUaW1lIiAvPjwvQ29sdW1ucz48L1F1ZXJ5PjxSZXN1bHRTY2hlbWE+PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IlNjaGVkdWxhciI+PEZpZWxkIE5hbWU9IlNjaGVkdWxhcklEIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iU2NoZWR1bGFyTmFtZSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJFbWFpbCIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJGcmVxdWVuY3kiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iV2Vla2RheXMiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJNb250aGx5RGF0ZSIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IlNjaGVkdWxhclRpbWUiIFR5cGU9IlVua25vd24iIC8+PC9WaWV3PjwvRGF0YVNldD48L1Jlc3VsdFNjaGVtYT48Q29ubmVjdGlvbk9wdGlvbnMgQ2xvc2VDb25uZWN0aW9uPSJ0cnVlIiAvPjwvU3FsRGF0YVNvdXJjZT4=" />
+  </ComponentStorage>
+</XtraReportsLayoutSerializer>
